@@ -9,7 +9,7 @@ app.use(
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
-app.get("/hello", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).send({ message: "succesfully connected" });
 });
 
