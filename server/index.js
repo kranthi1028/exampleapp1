@@ -1,18 +1,14 @@
-const app = require("express")();
 const express = require("express");
-const http = require("http").createServer(app);
-const cors = require("cors");
-const PORT = process.env.PORT || 3000;
-app.use(express.json());
-app.use(
-  cors({
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-  })
-);
+
+const app = express();
+
 app.get("/", (req, res) => {
-  res.status(200).send({ message: "succesfully connected" });
+  res.send("Express on Vercel");
 });
 
-http.listen(PORT, () => {
-  console.log(`listening on *:${PORT}`);
+app.listen(5000, () => {
+  console.log("Running on port 5000.");
 });
+
+// Export the Express API
+module.exports = app;
