@@ -6,6 +6,10 @@ app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
+app.get("/api/users", (req, res) => {
+  res.status(200).send({ message: "user saved successfully" });
+});
+
 app.listen(5000, () => {
   console.log("Running on port 5000.");
 });
